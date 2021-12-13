@@ -1,3 +1,10 @@
+/*
+ * @Author: gitsrc
+ * @Date: 2021-12-13 11:53:29
+ * @LastEditors: gitsrc
+ * @LastEditTime: 2021-12-13 15:23:09
+ * @FilePath: /blackholeDB_gitsrc/examples/basic.go
+ */
 package main
 
 import (
@@ -16,6 +23,7 @@ func main() {
 	// Set PrivateKey. This should come from an ENV or a secret store in the real world
 	opts.PrivateKey, _ = hex.DecodeString("44667768254d593b7ea48c3327c18a651f6031554ca4f5e3e641f6ff1ea72e98")
 
+	opts.EndPointConnection = IPFS_GATEWAY_ADDRESS
 	db, err := blackhole.Open(opts)
 	if err != nil {
 		log.Fatal(err)
